@@ -1,0 +1,198 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .logo:hover {
+    color: #f3f4f6;
+  }
+  
+  .location-select {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    margin-left: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .location-select:hover {
+    background-color: #eef1f6;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 12px 16px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 250px;
+    transition: all 0.3s ease;
+  }
+  
+  .search-btn {
+    position: absolute;
+    right: 10px;
+    background-color: #4b4b4b;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-btn:hover {
+    background-color: #333;
+  }
+  
+  .navbar_right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .auth-btn {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  .auth-btn:hover {
+    background-color: white;
+    color: #6a11cb;
+  }
+  
+  .signup-btn {
+    background-color: #1abc9c;
+    border: none;
+    color: white;
+  }
+  
+  .signup-btn:hover {
+    background-color: #16a085;
+    color: white;
+  }
+  
+  .header_profile {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .profile_icon {
+    font-size: 30px;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Increase clickable area for profile */
+  .header_profile:hover .profile_icon {
+    color: #f1f1f1;
+  }
+  
+  .header_profile_dropdown {
+    position: absolute;
+    top: 30px; /* Increased distance to avoid overlap */
+    right: 0;
+    background-color: white;
+    color: #333;
+    width: 180px; /* Increased width for better readability */
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px;
+    z-index: 10;
+  }
+  
+  .header_profile:hover .header_profile_dropdown {
+    display: block;
+    opacity: 1;
+  }
+  
+  .header_profile_dropdown li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .header_profile_dropdown li p {
+    margin-left: 10px;
+  }
+  
+  .header_profile_dropdown li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Ensure the dropdown stays open when hovering over it */
+  .header_profile:hover .header_profile_dropdown {
+    visibility: visible;
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Add padding to dropdown to prevent accidental closing */
+  .header_profile_dropdown {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .search-container {
+      margin-top: 10px;
+    }
+  
+    .navbar_right {
+      margin-top: 10px;
+    }
+  }
+  

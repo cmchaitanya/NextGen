@@ -1,0 +1,30 @@
+.liked-product-container {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Product Card */
+.liked-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.liked-card:hover {
+    transform: translateY(-10px);
+}
+
