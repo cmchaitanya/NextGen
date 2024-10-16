@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from 'react';
 import { StoreContext } from '../../Context/StoreContext';
 import axios from 'axios';
 import './LikedProduct.css';
-import { FaHeart } from "react-icons/fa";
 import Item from '../Item/Item';
 
 const LikedProduct = () => {

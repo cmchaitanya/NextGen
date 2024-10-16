@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './Item.css';
 import { Link } from 'react-router-dom';
 import { FaHeart } from "react-icons/fa";
 import axios from "axios";
+import { StoreContext } from '../../Context/StoreContext';
 
 const Item = (props) => {
     const [liked, setLiked] = useState(false); // state for like toggle
-    const url = 'http://localhost:4000';
+    const { url } = useContext(StoreContext);
     const item = props.product;
     const handleContact = async (userId) => {
       const new_url = `${url}/api/user/get-user/${userId}`;

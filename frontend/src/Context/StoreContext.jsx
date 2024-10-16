@@ -4,7 +4,6 @@ import axios from 'axios'
 export const StoreContext =createContext(null);
 
 const StoreContextProvider=(props)=>{
-    const [userAd,setUserAd]=useState({});
     const url="http://localhost:4000";
     const [token,setToken]=useState("");
     const [userId,setUserId]=useState("");
@@ -44,29 +43,10 @@ const StoreContextProvider=(props)=>{
             });
     };
 
-    const removeFromProfile= async (itemId)=>{
-        // setUserAd((prev)=>({...prev,[itemId]:prev[itemId]-1}))
-        // if(token){
-        //     await axios.post(url+"/api/profile/remove",{itemId},{headers:{token}})
-        // }
-    }
-
-    const fetchProductList=async()=>{
-        // const response=await axios.get(url+"/api/product/list")
-        // setProductList(response.data.data)
-    }
-
-    const loadProfileData=async(token)=>{
-        // const response=await axios.post(url+"/api/profile/get",{},{headers:{token}})
-        // setUserAd(response.data.cartData)
-    }
-
     useEffect(()=>{
         async function loadData(){
-            await fetchProductList();
             if(localStorage.getItem("token")){
                 setToken(localStorage.getItem("token"));
-                await loadProfileData(localStorage.getItem("token"));
             }
         }
         loadData();
@@ -74,9 +54,6 @@ const StoreContextProvider=(props)=>{
 
 
     const contextValue={
-        userAd,
-        setUserAd,
-        removeFromProfile,
         url,
         token,setToken,
         userId,setUserId,

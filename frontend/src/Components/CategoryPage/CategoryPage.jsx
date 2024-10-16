@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Categories from '../Categories/Categories';
-import { FaHeart } from "react-icons/fa";
 import { StoreContext } from '../../Context/StoreContext';
 import './CategoryPage.css';
 import Item from '../Item/Item';
