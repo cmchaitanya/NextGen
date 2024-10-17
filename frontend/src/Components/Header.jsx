@@ -2,15 +2,16 @@ import React, { useContext, useState } from 'react';
 import './Header.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../Context/StoreContext';
-import { assets } from '../assets/assets';
 import { FaSearch, FaUserCircle, FaHeart, FaPlusCircle, FaSignOutAlt, FaUserAlt } from "react-icons/fa";
+import Logo from '../assets/vite.svg';
 
 const Header = ({ setShowLogin, setShowSignUp }) => {
   const { token, setToken, userId, setUserId } = useContext(StoreContext);
   const { search, setSearch, handleClick } = useContext(StoreContext);
   const { locations } = useContext(StoreContext);
-  const [loc, setLoc] = useState(null);
+  const [loc, setLoc] = useState("");
   const navigate = useNavigate();
+
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -23,7 +24,10 @@ const Header = ({ setShowLogin, setShowSignUp }) => {
   return (
     <header className='header'>
       <div className="header-container">
-        <Link to={'/'} className="logo">NextGen</Link>
+        <Link to={'/'} className="logo">
+          <img src={Logo} alt="" />
+          NextGen
+        </Link>
 
         <select 
           className="location-select" 

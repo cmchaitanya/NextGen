@@ -23,12 +23,20 @@
   }
   
   .logo {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
     font-size: 28px;
     font-weight: bold;
     text-decoration: none;
     color: white;
     padding: 10px 20px;
     transition: color 0.3s ease;
+  }
+
+  .logo img{
+    height: 40px;
+    width: 40px;
   }
   
   .logo:hover {
