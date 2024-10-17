@@ -109,7 +109,7 @@ const ProductDetails = () => {
                     <div className="product-image-slider">
                         <div className="image-container">
                             <img 
-                                src={currentImage === 0 ? url+'/'+product.pimage1 : url+'/'+product.pimage2} 
+                                src={currentImage === 0 ? product.pimage1 : product.pimage2} 
                                 alt={product.pname} 
                                 className="product-image" 
                             />

@@ -8,7 +8,7 @@ import Item from '../../Components/Item/Item'
 
 const Home = () => {
     const { url} = useContext(StoreContext);
-    const { isSearch,setIsSearch,cproducts,setCproducts} = useContext(StoreContext);
+    const { isSearch,setIsSearch,cproducts,setSearch} = useContext(StoreContext);
     const navigate = useNavigate();
 
     const [products, setProducts] = useState([]);
@@ -41,7 +41,7 @@ const Home = () => {
             {isSearch && cproducts && (
                 <div className="search-results">
                     <h5> SEARCH RESULTS
-                        <button className="clear-btn" onClick={() => setIsSearch(false)}>CLEAR</button>
+                        <button className="clear-btn" onClick={() => {setIsSearch(false),setSearch('')}}>CLEAR</button>
                     </h5>
                     {cproducts.length === 0 && <h5>No Results Found</h5>}
                 </div>

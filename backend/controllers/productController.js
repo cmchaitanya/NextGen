@@ -150,7 +150,6 @@ const myProducts = (req, res) => {
 const removeProduct=async(req,res)=>{
     try {
         const product=await productModel.findById(req.body.productId);
-        fs.unlink(`uploads/${product.image}`,()=>{}) //delete from folder
         await productModel.findByIdAndDelete(req.body.productId); //delete from database
         res.json({success:true,message:"Product Removed"})
     } catch (error) {
