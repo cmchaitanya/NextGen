@@ -44,25 +44,25 @@ const SignUp = ({ setShowSignUp, setShowLogin }) => {
                     <img onClick={() => setShowSignUp(false)} src={assets.cross_icon} alt="close" />
                 </div>
                 <div className='loginSignup_fields'>
-                    <input name='username' value={formData.username} onChange={changeHandler} type="text" placeholder='Enter Username' />
-                    <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Enter Email' />
-                    <input name='contact' value={formData.contact} onChange={changeHandler} type="number" placeholder='Enter Contact No.' />
-                        <select name='branch' value={formData.branch} onChange={changeHandler}>
-                            <option>Your Branch</option>
-                            <option>CSE</option>
-                            <option>Electronics</option>
-                            <option>Mechanical</option>
-                            <option>Chemical</option>
-                            <option>Civil</option>
-                        </select>
-                        <input name='roll' value={formData.roll} onChange={changeHandler} type="number" placeholder='Enter Roll no.' />
-                    <select name='hostel' value={formData.hostel} onChange={changeHandler}>
+                    <input id='username' name='username' value={formData.username} onChange={changeHandler} type="text" placeholder='Enter Username' />
+                    <input id='email' name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Enter Email' />
+                    <input id='contact' name='contact' value={formData.contact} onChange={changeHandler} type="number" placeholder='Enter Contact No.' />
+                    <select id='branch' name='branch' value={formData.branch} onChange={changeHandler}>
+                        <option>Your Branch</option>
+                        <option>CSE</option>
+                        <option>Electronics</option>
+                        <option>Mechanical</option>
+                        <option>Chemical</option>
+                        <option>Civil</option>
+                    </select>
+                    <input id='roll' name='roll' value={formData.roll} onChange={changeHandler} type="number" placeholder='Enter Roll no.' />
+                    <select id='hostel' name='hostel' value={formData.hostel} onChange={changeHandler}>
                         <option>Your Hostel</option>
                         <option>Vishweshwaraiya</option>
                         <option>DhanrajGiri</option>
                         <option>Morvi</option>
                     </select>
-                    <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' />
+                    <input id='password' name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' />
                 </div>
                 <button type='submit' className='loginSignup_button'>Create Account</button>
                 <p className="loginSignup_login">
@@ -72,6 +72,7 @@ const SignUp = ({ setShowSignUp, setShowLogin }) => {
                     <p>By continuing, I agree to the <span>terms and conditions</span></p>
                 </div>
             </form>
+
         </div>
     );
 };

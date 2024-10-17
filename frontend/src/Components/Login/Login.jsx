@@ -37,8 +37,8 @@ const Login = ({ setShowLogin, setShowSignUp }) => {
                     <img onClick={() => setShowLogin(false)} src={assets.cross_icon} alt="close" />
                 </div>
                 <div className='loginSignup_fields'>
-                    <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email Address' />
-                    <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' />
+                    <input id='email' name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email Address' />
+                    <input id='password' name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' />
                 </div>
                 <button type='submit' className='loginSignup_button'>Login</button>
                 <p className="loginSignup_login">
