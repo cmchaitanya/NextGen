@@ -4,7 +4,7 @@ import axios from 'axios'
 export const StoreContext =createContext(null);
 
 const StoreContextProvider=(props)=>{
-    const url="http://localhost:4000";
+    const url="https://nextgen-backend-s1uz.onrender.com";
     const [token,setToken]=useState("");
     const [userId,setUserId]=useState("");
 
