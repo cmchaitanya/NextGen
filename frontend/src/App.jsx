@@ -9,6 +9,7 @@ import CategoryPage from './Components/CategoryPage/CategoryPage'
 import MyProfile from './Components/MyProfile/MyProfile'
 import ProductDetails from './Components/ProductDetails/ProductDetails'
 import SignUp from './Pages/SignUp/SignUp'
+import UpdateProduct from './Components/UpdateProduct/UpdateProduct'
 
 const App = () => {
   const [showLogin,setShowLogin]=useState(false);
@@ -27,6 +28,7 @@ const App = () => {
           <Route path='/liked-products' element={<LikedProduct/> }/>
           <Route path='/my-profile' element={<MyProfile/> }/>
           <Route path='/product/:productId' element={<ProductDetails/> }/>
+          <Route path='/update/:productId' element={<UpdateProduct/>}/>
           {/* <Route path='/list' element={ <ProductDisplay/> }/> */}
           {/* <Route path='/product' element={<Product/> }>
             <Route path=':productId' element={<Product/>}/>

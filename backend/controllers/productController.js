@@ -1,6 +1,10 @@
 import productModel from "../models/productModel.js";
-import fs from 'fs'
-import validator from "validator";
+
+// Image Storage Engine
+import multer from 'multer'
+import cloudConfig from '../cloudConfig.js'; // Importing the default export
+const { cloudinary, storage } = cloudConfig;
+const upload=multer({storage})
 
 //add product item
 const addProduct=(req,res)=>{
@@ -10,8 +14,6 @@ const addProduct=(req,res)=>{
     const pdesc = req.body.pdesc;
     const price = req.body.price;
     const category = req.body.category;
-    
-    console.log(req.body);
 
     if (!plat || !plong || !pname || !pdesc || !price || !category) {
         return res.status(400).send({ message: 'All fields are required' });
@@ -158,4 +160,31 @@ const removeProduct=async(req,res)=>{
     }
 }
 
-export {addProduct,getProducts,getProductsById,myProducts,removeProduct,search}
+const updateProduct = async (req, res) => {
+    try {
+        const { pname, pdesc, price, category } = req.body; // Form fields
+        const productId = req.params.pId;
+
+        const updatedData = { pname, pdesc, price, category };
+
+        // Check for uploaded images and update their paths
+        if (req.files?.pimage1?.[0]) updatedData.pimage1 = req.files.pimage1[0].path;
+        if (req.files?.pimage2?.[0]) updatedData.pimage2 = req.files.pimage2[0].path;
+
+        // Update the product in the database
+        const updatedProduct = await productModel.findByIdAndUpdate(productId, updatedData, {
+            new: true,
+        });
+
+        if (!updatedProduct) {
+            return res.status(404).json({ success: false, message: 'Product not found' });
+        }
+
+        res.json({ success: true, message: 'Product Updated', product: updatedProduct });
+    } catch (error) {
+        console.error('ERROR:', error);
+        res.status(500).json({ success: false, message: 'Error updating product' });
+    }
+};
+
+export {addProduct,getProducts,getProductsById,myProducts,removeProduct,search,updateProduct}

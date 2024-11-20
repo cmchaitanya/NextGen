@@ -113,6 +113,7 @@ const ProductDetails = () => {
                                 alt={product.pname} 
                                 className="product-image" 
                             />
+                            {console.log(product.pimage1+" "+product.pimage2)}
                             <div className="slider-controls">
                                 <FaArrowLeft className="slider-arrow left" onClick={handlePrevImage} />
                                 <FaArrowRight className="slider-arrow right" onClick={handleNextImage} />

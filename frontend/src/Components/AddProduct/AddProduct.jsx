@@ -33,7 +33,7 @@ const AddProduct = () => {
       formData.append('pimage1', pimage1);
       formData.append('pimage2', pimage2);
       formData.append('userId', localStorage.getItem('userId'));
-
+      
       const new_url = url + '/api/product/add-product';
       axios.post(new_url, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }

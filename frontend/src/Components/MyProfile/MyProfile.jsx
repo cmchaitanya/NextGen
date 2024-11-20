@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { useNavigate} from "react-router-dom";
 import { FaUserCircle, FaEnvelope, FaPhone, FaUniversity, FaHome, FaHeart } from 'react-icons/fa';
 import { StoreContext } from '../../Context/StoreContext';
 import axios from 'axios';
@@ -9,6 +10,7 @@ const MyProfile = () => {
     const { url } = useContext(StoreContext);
     const [user, setUser] = useState({});
     const [products, setProducts] = useState([]);
+    const navigate = useNavigate();
 
     const deleteItem = async (productId) => {
         const new_url = `${url}/api/product/del`;
@@ -20,6 +22,7 @@ const MyProfile = () => {
             alert(err);
         }
     };
+
 
     useEffect(() => {
         // Fetch user profile data
@@ -85,7 +88,7 @@ const MyProfile = () => {
                         <div key={product._id} className="profile-product-card">
                             <Item product={product}/>
                             <button onClick={(e) => deleteItem(product._id,e)}>Delete</button>
-                            <button>update</button>
+                            <button onClick={(e) => navigate('/update/' + product._id)}>Update</button>
                         </div>
                     ))}
                 </div>
