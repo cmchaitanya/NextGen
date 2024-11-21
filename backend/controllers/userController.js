@@ -16,7 +16,7 @@ const login =async(req,res)=>{
             return res.json({success:false,message:"Password is incorrect"});
         }
         const token =createToken(user._id);
-        res.json({ success: true, token, userId: user._id });
+        res.json({ success: true, token, userId: user._id, username:user.username });
         // res.json({success:true,token})
     } catch (error) {
         console.log({success:false,message:"Error"});
@@ -65,7 +65,7 @@ const signup =async (req,res)=>{
         })
         const user = await newUser.save();
         const token = createToken(user._id)
-        res.json({ success: true, token, userId: user._id });
+        res.json({ success: true, token, userId: user._id, username:user.username });
     } catch (error) {
         console.log(error);
         res.json({success:false,message:"Error"})

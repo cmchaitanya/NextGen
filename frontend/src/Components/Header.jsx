@@ -16,6 +16,7 @@ const Header = ({ setShowLogin, setShowSignUp }) => {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
+    localStorage.removeItem("userName");
     setToken("");
     setUserId("");
     navigate("/");

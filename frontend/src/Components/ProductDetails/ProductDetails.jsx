@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { FaHeart, FaCartPlus, FaArrowLeft, FaArrowRight } from "react-icons/fa"; // For icons
+import { FaHeart, FaArrowLeft, FaArrowRight } from "react-icons/fa"; // For icons
 import { useParams } from 'react-router-dom';
 import { StoreContext } from '../../Context/StoreContext';
 import axios from "axios";
 import './ProductDetails.css'; // Enhanced styles
+import Chat from '../Chat/Chat';
 
 const ProductDetails = () => {
     const { url } = useContext(StoreContext);
@@ -102,7 +103,7 @@ const ProductDetails = () => {
     };
 
     return (
-        
+        <>
         <div className="product-details-container">
             {product ? (
                 <>
@@ -113,7 +114,6 @@ const ProductDetails = () => {
                                 alt={product.pname} 
                                 className="product-image" 
                             />
-                            {console.log(product.pimage1+" "+product.pimage2)}
                             <div className="slider-controls">
                                 <FaArrowLeft className="slider-arrow left" onClick={handlePrevImage} />
                                 <FaArrowRight className="slider-arrow right" onClick={handleNextImage} />
@@ -147,6 +147,10 @@ const ProductDetails = () => {
                 <p>Loading product details...</p>
             )}
         </div>
+        <div className="product-details-container">
+            <Chat pId={productId}/>
+        </div>
+        </>
     );
 };
 

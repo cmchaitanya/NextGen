@@ -65,7 +65,7 @@ const UpdateProduct = () => {
            });
            if (res.data.message) {
              alert(res.data.message);
-            //  navigate('/');
+             navigate('/');
            }
          } catch (err) {
            alert(err);

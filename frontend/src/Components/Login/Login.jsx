@@ -23,6 +23,8 @@ const Login = ({ setShowLogin, setShowSignUp }) => {
             setToken(response.data.token);
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('userId', response.data.userId);
+            localStorage.setItem('userName', response.data.username);
+            console.log(response.data);
             setShowLogin(false);
         } else {
             alert(response.data.message);
